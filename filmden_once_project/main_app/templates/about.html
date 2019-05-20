@@ -1,0 +1,334 @@
+﻿{% load static %}
+<!doctype html>
+<html>
+<head>
+	<!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Filmdən Öncə</title>
+        <meta name="description" content="A Template by Gozha.net">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Gozha.net">
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/fo.png' %}"/>
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/fo.png' %}"/>
+    <!-- Mobile Specific Metas-->
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="telephone=no" name="format-detection">
+    
+    <!-- Fonts -->
+        <!-- Font awesome - icon font -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!-- Roboto -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <!-- Stylesheets --> 
+
+        <!-- Mobile menu -->
+        
+        <link href="{% static 'css/gozha-nav.css' %}" rel="stylesheet">
+        <!-- Select -->
+        <link href="{% static 'css/external/jquery.selectbox.css' %}" rel="stylesheet">
+        <!-- Magnific-popup -->
+        <link href="{% static 'css/external/magnific-popup.css' %}" rel="stylesheet">
+    
+        <!-- Custom -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+        <!-- Modernizr --> 
+        <script src="{% static 'js/external/modernizr.custom.js' %}"></script>
+    
+</head>
+
+<body>
+    <div class="wrapper">
+       
+
+        <!-- Header section -->
+        <header class="header-wrapper">
+            <div class="container">
+                <!-- Logo link-->
+                <a href='/' class="logo">
+                    <img alt='logo' src="{% static 'images/fo.png' %}">
+                </a>
+                
+                <!-- Main website navigation-->
+                <nav id="navigation-box">
+                    <!-- Toggle for mobile menu mode -->
+                    <a href="#" id="navigation-toggle">
+                        <span class="menu-icon">
+                            <span class="icon-toggle" role="button" aria-label="Toggle Navigation">
+                              <span class="lines"></span>
+                            </span>
+                        </span>
+                    </a>
+                    
+                    <!-- Link navigation -->
+                    <ul id="navigation">
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="/films/">Films and TV-Series </a>
+                           
+                        </li>
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="/products/">Products</a>
+                            
+                        </li>
+                       
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="/about/">About</a>
+                            
+                        </li>
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="/news/">News</a>
+                            
+                        </li>
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="/contact/">Contact</a>
+                               
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Additional header buttons / Auth and direct link to booking-->
+                <div class="control-panel">
+                    <a href="#" class="btn btn--sign login-window">Sign in</a>
+                </div>
+
+            </div>
+        </header>
+        
+        <!-- Search bar -->
+       
+        
+        <!-- Main content -->
+        <div class="container">
+            <div class="row">
+                    <div  >
+                            <h1>About</h1>
+                            <p>
+                                Filmdən Öncə 2017-ci il avqustun 2si yaradılıb.Hal-hazırda müxtəlif sosyal şəbəkələrdə 200-dən çox film incələməsi ilə izləyicilərinə təqdim edib.Filmdən Öncə komandasının məqsədi film haqqında insanlara məlumat vermək və son xəbərlərdən xəbərdar olmasıdır 
+                            </p>
+                        </div>
+                    <h2 class="page-heading">Our Team</h2>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <img src="https://scontent.fgyd4-1.fna.fbcdn.net/v/t1.0-9/26992424_2082143792006721_2177201707601539049_n.jpg?_nc_cat=107&_nc_ht=scontent.fgyd4-1.fna&oh=acb44ea364682147b466b218c19e2106&oe=5D46C4DF">
+                        <div class="team-content">
+                            <h3 class="title">Faiq Rustemov</h3>
+                            <span class="post">Project Manager</span>
+                             
+                            <span class="post">Front-end Developer</span>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/profile.php?id=100006333610536" class="fab fa-facebook"></a></li>
+                                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <img src="{% static 'images/pp.jpeg' %}">
+                        <div class="team-content">
+                            <h3 class="title">Rufet Quliyev</h3>
+                            <span class="post">Front-end Developer</span>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/profile.php?id=100006333610536" class="fab fa-facebook"></a></li>
+                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <img src="https://scontent.fgyd4-1.fna.fbcdn.net/v/t1.0-9/15192706_569980999873193_2432115994206819387_n.jpg?_nc_cat=106&_nc_ht=scontent.fgyd4-1.fna&oh=3340d6f962ca5364e3d8ad4056440c64&oe=5D766FD4">
+                        <div class="team-content">
+                            <h3 class="title">Naseh Badalov</h3>
+                            <span class="post">Back-end Developer</span>
+                            <ul class="social">
+                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <img src="https://media.licdn.com/dms/image/C5603AQHuUiOIQgfIsQ/profile-displayphoto-shrink_800_800/0?e=1560988800&v=beta&t=l_nRjCXJ2Ow7byFy3xQO19-pMtpxqbinos3O3Ln8azA">
+                        <div class="team-content">
+                            <h3 class="title">Nubar Xalidova</h3>
+                            <span class="post">Back-end Developer</span>
+                            <ul class="social">
+                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <img src="https://scontent.fgyd4-2.fna.fbcdn.net/v/t1.0-9/13062060_971262459617632_4934624431290584164_n.jpg?_nc_cat=101&_nc_ht=scontent.fgyd4-2.fna&oh=c839005bb14fd70e2ac598f1935da05f&oe=5D31A687">
+                        <div class="team-content">
+                            <h3 class="title">Səbuhi Muradov</h3>
+                            <span class="post">Mətin Yazar</span>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/profile.php?id=100006333610536" class="fab fa-facebook"></a></li>
+                                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <img  style="width:270px; height:270px;" src="{% static 'images/ilke.jpeg' %}">
+                        <div class="team-content">
+                            <h3 class="title">İlke Nury</h3>
+                            <span class="post">Mətin Yazar</span>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/profile.php?id=100006333610536" class="fab fa-facebook"></a></li>
+                                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <img  style="width:270px; height:270px;" src="https://scontent.fgyd4-1.fna.fbcdn.net/v/t1.0-9/55826961_2110038682412179_1195343635323813888_n.jpg?_nc_cat=105&_nc_ht=scontent.fgyd4-1.fna&oh=b612a694b1056bed1b62d3d2d2d55d2f&oe=5D3BD907">
+                        <div class="team-content">
+                            <h3 class="title">Əvəz Abdullayev</h3>
+                            <span class="post">Front-end Developer</span>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/profile.php?id=100006333610536" class="fab fa-facebook"></a></li>
+                                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                <li><a href="#" class="fab fa-instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="clearfix"></div>
+
+       
+    </div>
+    <footer class="footer-wrapper">
+        <section class="container">
+            <div class="col-xs-4 col-md-2 footer-nav">
+                <ul class="nav-link">
+                    <li><a href="/films/" class="nav-link__item">Films</a></li>
+                    <li><a href="rates-left.html" class="nav-link__item">Bu ayın filmləri</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-md-2 footer-nav">
+                <ul class="nav-link">
+                    <li><a href="coming-soon.html" class="nav-link__item">Soon</a></li>
+                    <li><a href="/news/" class="nav-link__item">News</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-md-2 footer-nav">
+                <ul class="nav-link">
+                    <li><a href="/about/" class="nav-link__item">About</a></li>
+                    <li><a href="/contact/" class="nav-link__item">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="footer-info">
+                    <p class="heading-special--small">Filmdən Öncə<br><span class="title-edition">in the social media</span></p>
+
+                    <div class="social">
+                        <a href='https://www.facebook.com/Filmden-%C3%96nce-1932930300282307/' class="social__variant fa fa-facebook"></a>
+                        <a href='https://twitter.com/FilmdenO' class="social__variant fa fa-twitter"></a>
+                        <a href='https://www.instagram.com/filmdenonce/' class="social__variant fa fa-instagram"></a>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                    <p class="copy">&copy;Filmdən Öncə</p>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- open/close -->
+        <div class="overlay overlay-hugeinc">
+            
+            <section class="container">
+
+                <div class="col-sm-4 col-sm-offset-4">
+                    <button type="button" class="overlay-close">Close</button>
+                    <form id="login-form" class="login" method='get' novalidate=''>
+                        <p class="login__title">sign in <br><span class="login-edition">welcome to A.Movie</span></p>
+
+                        <div class="social social--colored">
+                                <a href='#' class="social__variant fa fa-facebook"></a>
+                                <a href='#' class="social__variant fa fa-twitter"></a>
+                                <a href='#' class="social__variant fa fa-tumblr"></a>
+                        </div>
+
+                        <p class="login__tracker">or</p>
+                        
+                        <div class="field-wrap">
+                        <input type='email' placeholder='Email' name='user-email' class="login__input">
+                        <input type='password' placeholder='Password' name='user-password' class="login__input">
+
+                        <input type='checkbox' id='#informed' class='login__check styled'>
+                        <label for='#informed' class='login__check-info'>remember me</label>
+                         </div>
+                        
+                        <div class="login__control">
+                            <button type='submit' class="btn btn-md btn--warning btn--wider">sign in</button>
+                            <a href="#" class="login__tracker form__tracker">Forgot password?</a>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+        </div>
+
+	<!-- JavaScript-->
+        <!-- jQuery 1.9.1--> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/external/jquery-1.10.1.min.js"><\/script>')</script>
+        <!-- Migrate --> 
+        <script src="js\external\jquery-migrate-1.2.1.min.js"></script>
+        <!-- Bootstrap 3--> 
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+        <!-- Magnific-popup -->
+        <script src="{% static 'js/external/jquery.magnific-popup.min.js' %}"></script>
+
+        <!-- Mobile menu -->
+        <script src="{% static 'js/jquery.mobile.menu.js' %}"></script>
+         <!-- Select -->
+        <script src="{% static 'js/external/jquery.selectbox-0.2.min.js' %}"></script>
+
+        <!-- Form element -->
+        <script src="{% static 'js/externa/\form-element.js' %}"></script>
+        <!-- Form validation -->
+        <script src="{% static 'js/form.js' %}"></script>
+
+        <!-- Custom -->
+        <script src="{% static 'js/custom.js' %}"></script>
+		
+		<script type="text/javascript">
+            $(document).ready(function() {
+                init_Gallery();
+            });
+		</script>
+
+</body>
+</html>
