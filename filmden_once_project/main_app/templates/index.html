@@ -1,0 +1,508 @@
+
+<!doctype html>
+<html>
+{% load static %}
+
+<head>
+<!-- Basic Page Needs -->
+<link rel="shortcut icon" type="image/png" href="{% static 'images/fo.png' %}"/>
+<link rel="shortcut icon" type="image/png" href="{% static 'images/fo.png' %}"/>
+<meta charset="utf-8">
+<title>Filmdən Öncə</title>
+<meta name="description" content="A Template by Gozha.net">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="Gozha.net">
+
+<!-- Mobile Specific Metas-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+
+<!-- Fonts -->
+<!-- Font awesome - icon font -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- Roboto -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+<!-- Open Sans -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
+
+<!-- Stylesheets -->
+
+<!-- Mobile menu -->
+<link href="{% static 'css/gozha-nav.css' %}" rel="stylesheet">
+<!-- Select -->
+<link href="{% static 'css/external/jquery.selectbox.css' %}" rel="stylesheet">
+
+<!-- REVOLUTION BANNER CSS SETTINGS -->
+<link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/settings.css' %}" media="screen">
+
+<!-- Custom -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<!-- Modernizr -->
+<script src="{% static 'js/external/modernizr.custom.js' %}"></script>
+</head>
+
+<body>
+<div class="wrapper">
+<!-- Banner -->
+
+<!-- Header section -->
+<header class="header-wrapper header-wrapper--home">
+<div class="container">
+<!-- Logo link-->
+<a href='/users/' class="logo">
+<img alt='logo' src="{% static 'images/fo.png' %}">
+</a>
+
+<!-- Main website navigation-->
+<nav id="navigation-box">
+<!-- Toggle for mobile menu mode -->
+<a href="#" id="navigation-toggle">
+<span class="menu-icon">
+<span class="icon-toggle" role="button" aria-label="Toggle Navigation">
+<span class="lines"></span>
+</span>
+</span>
+</a>
+
+<!-- Link navigation -->
+<ul id="navigation">
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="./movie-page-left.html">Filmlər ve Seriallar</a>
+<ul>
+<li class="menu__nav-item"><a href="movie-page-left.html">Filmlər</a></li>
+<li class="menu__nav-item"><a href="movie-page-right.html">Seriallar</a></li>
+
+</ul>
+</li>
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="page-elements.html">Məhsullar</a>
+
+</li>
+
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="gallery-four.html">Haqqımızda</a>
+
+</li>
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="news-left.html">Xəbərlər</a>
+
+</li>
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="contact.html">Bizimlə Əlaqə</a>
+
+</li>
+</ul>
+</nav>
+
+<!-- Additional header buttons / Auth and direct link to booking-->
+<div class="control-panel">
+<div class="auth auth--home">
+<div class="auth__show">
+<span class="auth__image">
+<img alt="" src="{% static 'images/client-photo/auth.png' %}">
+</span>
+</div>
+<a href="#" class="btn btn--sign btn--singin">
+me
+</a>
+<ul class="auth__function">
+<li><a href="#" class="auth__function-item">Watchlist</a></li>
+<li><a href="#" class="auth__function-item">Booked tickets</a></li>
+<li><a href="#" class="auth__function-item">Discussion</a></li>
+<li><a href="#" class="auth__function-item">Settings</a></li>
+</ul>
+
+</div>
+</div>
+
+</div>
+</header>
+
+<!-- Slider -->
+
+
+<!-- Main content -->
+<section class="container">
+<div class="movie-best">
+
+<div class="col-sm-10 col-sm-offset-1 movie-best__rating">Today Best choice</div>
+<div class="col-sm-12 change--col fav-films-block" style="margin-top:110px;">
+</div>
+<div class="col-sm-10 col-sm-offset-1 movie-best__check">check all movies now playing</div>
+</div>
+
+<div class="col-sm-12">
+<div class="mega-select-present mega-select-top mega-select--full">
+<div class="mega-select-marker">
+<div class="marker-indecator location">
+<p class="select-marker"><span>İndi kinoya bax</span> <br>Öz şəhərində</p>
+</div>
+
+<div class="marker-indecator cinema">
+<p class="select-marker"><span>Öz sinemavı </span> <br>Axtar</p>
+</div>
+
+<div class="marker-indecator film-category">
+<p class="select-marker"><span>Zövqünüzə görə </span> <br> film tapın</p>
+</div>
+
+<div class="marker-indecator actors">
+<p class="select-marker"><span> Sevdiyiniz aktyorları</span> <br>tapın</p>
+</div>
+
+<div class="marker-indecator director">
+<p class="select-marker"><span>Bəyəndiyiniz rejissorlar </span> <br>hamsı burda</p>
+</div>
+
+<div class="marker-indecator country">
+<p class="select-marker"><span>Ölkələrə görə</span> <br>film axtar</p>
+</div>
+</div>
+
+<div class="mega-select pull-right">
+<span class="mega-select__point">Search by</span>
+<ul class="mega-select__sort">
+<li class="filter-wrap"><a href="#" class="mega-select__filter filter--active"
+data-filter='location'>Yer</a></li>
+<li class="filter-wrap"><a href="#" class="mega-select__filter"
+data-filter='cinema'>Sinema</a></li>
+<li class="filter-wrap"><a href="#" class="mega-select__filter"
+data-filter='film-category'>Kategoriya</a></li>
+<li class="filter-wrap"><a href="#" class="mega-select__filter"
+data-filter='actors'>Aktyorlar</a></li>
+<li class="filter-wrap"><a href="#" class="mega-select__filter"
+data-filter='director'>Rejissor</a></li>
+<li class="filter-wrap"><a href="#" class="mega-select__filter"
+data-filter='country'>Ölkə</a></li>
+</ul>
+
+<input name="search-input" type='text' class="select__field">
+
+<div class="select__btn">
+<a href="#" class="btn btn-md btn--danger location">Öz şəhərini<span
+class="hidden-exrtasm">axtar</span></a>
+<a href="#" class="btn btn-md btn--danger cinema">find <span class="hidden-exrtasm">suitable
+cimema</span></a>
+<a href="#" class="btn btn-md btn--danger film-category">find <span
+class="hidden-exrtasm">best category</span></a>
+<a href="#" class="btn btn-md btn--danger actors">find <span class="hidden-exrtasm">talented
+actors</span></a>
+<a href="#" class="btn btn-md btn--danger director">find <span
+class="hidden-exrtasm">favorite director</span></a>
+<a href="#" class="btn btn-md btn--danger country">find <span
+class="hidden-exrtasm">produced country</span></a>
+</div>
+
+<div class="select__dropdowns">
+<ul class="select__group location">
+<li class="select__variant" data-value='London'>London</li>
+<li class="select__variant" data-value='New York'>New York</li>
+<li class="select__variant" data-value='Paris'>Paris</li>
+<li class="select__variant" data-value='Berlin'>Berlin</li>
+<li class="select__variant" data-value='Moscow'>Moscow</li>
+<li class="select__variant" data-value='Minsk'>Minsk</li>
+<li class="select__variant" data-value='Warsawa'>Warsawa</li>
+</ul>
+
+<ul class="select__group cinema">
+<li class="select__variant" data-value='Cineworld'>Cineworld</li>
+<li class="select__variant" data-value='Empire'>Empire</li>
+<li class="select__variant" data-value='Everyman'>Everyman</li>
+<li class="select__variant" data-value='Odeon'>Odeon</li>
+<li class="select__variant" data-value='Picturehouse'>Picturehouse</li>
+</ul>
+
+<ul class="select__group film-category">
+<li class="select__variant" data-value="Children's">Children's</li>
+<li class="select__variant" data-value='Comedy'>Comedy</li>
+<li class="select__variant" data-value='Drama'>Drama</li>
+<li class="select__variant" data-value='Fantasy'>Fantasy</li>
+<li class="select__variant" data-value='Horror'>Horror</li>
+<li class="select__variant" data-value='Thriller'>Thriller</li>
+</ul>
+
+<ul class="select__group actors">
+<li class="select__variant" data-value='Leonardo DiCaprio'>Leonardo DiCaprio</li>
+<li class="select__variant" data-value='Johnny Depp'>Johnny Depp</li>
+<li class="select__variant" data-value='Jack Nicholson'>Jack Nicholson</li>
+<li class="select__variant" data-value='Robert De Niro'>Robert De Niro</li>
+<li class="select__variant" data-value='Morgan Freeman'>Morgan Freeman</li>
+<li class="select__variant" data-value='Jim Carrey'>Jim Carrey</li>
+<li class="select__variant" data-value='Adam Sandler'>Adam Sandler</li>
+<li class="select__variant" data-value='Ben Stiller'>Ben Stiller</li>
+</ul>
+
+<ul class="select__group director">
+<li class="select__variant" data-value='Steven Spielberg'>Steven Spielberg</li>
+<li class="select__variant" data-value='Martin Scorsese'>Martin Scorsese</li>
+<li class="select__variant" data-value='Guy Ritchie'>Guy Ritchie</li>
+<li class="select__variant" data-value='Christopher Nolan'>Christopher Nolan</li>
+<li class="select__variant" data-value='Tim Burton'>Tim Burton</li>
+</ul>
+
+<ul class="select__group country">
+<li class="select__variant" data-value='USA'>USA</li>
+<li class="select__variant" data-value='Germany'>Germany</li>
+<li class="select__variant" data-value='Australia'>Australia</li>
+<li class="select__variant" data-value='UK'>UK</li>
+<li class="select__variant" data-value='Japan'>Japan</li>
+<li class="select__variant" data-value='Serbia'>Serbia</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="clearfix"></div>
+
+<h2 id='target' class="page-heading heading--outcontainer">Now in the cinema</h2>
+
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-8 col-md-9 movies1" >
+<!-- Movie variant with time -->
+<!-- Movie variant with time -->
+
+<div class="row">
+<div class="social-group">
+<div class="col-sm-6 col-md-4 col-sm-push-6 col-md-push-4">
+<div class="social-group__head">Join <br>our social groups</div>
+<div class="social-group__content">A lot of fun, discussions, queezes and contests
+among members. <br class="hidden-xs"><br>Always be first to know about best
+offers from cinemas and our partners</div>
+</div>
+
+<div class="col-sm-6 col-md-4 col-sm-pull-6 col-md-pull-4">
+<div class="facebook-group">
+
+<iframe class="fgroup"
+src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fthemeforest&amp;width=240&amp;height=330&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"
+scrolling="no" frameborder="0"
+style="border:none; overflow:hidden; width:240px; height:330px;"
+allowtransparency="true"></iframe>
+</div>
+</div>
+
+<div class="clearfix visible-sm"></div>
+<div class="col-sm-6 col-md-4">
+<div class="twitter-group">
+<div id="twitter-feed"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<aside class="col-sm-4 col-md-3">
+<div class="sitebar first-banner--left">
+
+
+
+
+
+<div class="promo marginb-sm">
+<div class="promo__head">A.Movie app</div>
+<div class="promo__describe">for all smartphones<br> and tablets</div>
+<div class="promo__content">
+<ul>
+<li class="store-variant"><a href="#"><img alt=''
+src="{% static 'images/apple-store.svg' %}"></a></li>
+<li class="store-variant"><a href="#"><img alt=''
+src="{% static 'images/google-play.svg' %}"></a></li>
+<li class="store-variant"><a href="#"><img alt=''
+src="{% static 'images/windows-store.svg' %}"></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</aside>
+</div>
+</div>
+
+<div class="col-sm-12">
+<h2 class="page-heading">Latest news</h2>
+
+<div class="col-sm-4 similar-wrap col--remove">
+<div class="post post--preview post--preview--wide">
+<div class="post__image">
+<img alt='' style="height:75px; width:133px;"
+src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Dark_Phoenix_%28film%29.png/220px-Dark_Phoenix_%28film%29.png">
+<div class="social social--position social--hide">
+<span class="social__name">Share:</span>
+<a href='#' class="social__variant social--first fa fa-facebook"></a>
+<a href='#' class="social__variant social--second fa fa-twitter"></a>
+<a href='#' class="social__variant social--third fa fa-vk"></a>
+</div>
+</div>
+<p class="post__date">22 October 2013 </p>
+<a href="single-page-left.html" class="post__title">Dark Phoenix</a>
+<a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+</div>
+</div>
+<div class="col-sm-4 similar-wrap col--remove">
+<div class="post post--preview post--preview--wide">
+<div class="post__image">
+<img alt=''
+src="https://i.kinja-img.com/gawker-media/image/upload/s--CG5IArZR--/c_scale,f_auto,fl_progressive,q_80,w_800/ckp4dmtavdq7fizotrx8.png">
+<div class="social social--position social--hide">
+<span class="social__name">Share:</span>
+<a href='#' class="social__variant social--first fa fa-facebook"></a>
+<a href='#' class="social__variant social--second fa fa-twitter"></a>
+<a href='#' class="social__variant social--third fa fa-vk"></a>
+</div>
+</div>
+<p class="post__date">22 October 2013 </p>
+<a href="single-page-left.html" class="post__title">30th Annual Night Of Stars Presented By The
+Fashion Group International</a>
+<a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+</div>
+</div>
+<div class="col-sm-4 similar-wrap col--remove">
+<div class="post post--preview post--preview--wide">
+<div class="post__image">
+<img alt=''
+src="https://static1.srcdn.com/wordpress/wp-content/uploads/2019/04/Star-Wars-9-Rise-of-Skywalker-Title-and-Stars.jpg">
+<div class="social social--position social--hide">
+<span class="social__name">Share:</span>
+<a href='#' class="social__variant social--first fa fa-facebook"></a>
+<a href='#' class="social__variant social--second fa fa-twitter"></a>
+<a href='#' class="social__variant social--third fa fa-vk"></a>
+</div>
+</div>
+<p class="post__date">22 October 2013 </p>
+<a href="single-page-left.html" class="post__title">Hollywood Film Awards 2013</a>
+<a href="single-page-left.html" class="btn read-more post--btn">read more</a>
+</div>
+</div>
+</div>
+
+</section>
+
+<div class="clearfix"></div>
+
+<footer class="footer-wrapper">
+<section class="container">
+<div class="col-xs-4 col-md-2 footer-nav">
+<ul class="nav-link">
+<li><a href="./movie-page-left.html" class="nav-link__item">Filmlər</a></li>
+<li><a href="rates-left.html" class="nav-link__item">Bu ayın filmləri</a></li>
+</ul>
+</div>
+<div class="col-xs-4 col-md-2 footer-nav">
+<ul class="nav-link">
+<li><a href="coming-soon.html" class="nav-link__item">Tezliklə</a></li>
+<li><a href="news-left.html" class="nav-link__item">Xəbərlər</a></li>
+</ul>
+</div>
+<div class="col-xs-4 col-md-2 footer-nav">
+<ul class="nav-link">
+<li><a href="gallery-four.html" class="nav-link__item">Haqqımızda</a></li>
+<li><a href="contact.html" class="nav-link__item">Bizimlə Əlaqə</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-md-6">
+<div class="footer-info">
+<p class="heading-special--small">Filmdən Öncə<br><span class="title-edition">in the social
+media</span></p>
+
+<div class="social">
+<a href='https://www.facebook.com/Filmden-%C3%96nce-1932930300282307/'
+class="social__variant fa fa-facebook"></a>
+<a href='https://twitter.com/FilmdenO' class="social__variant fa fa-twitter"></a>
+<a href='https://www.instagram.com/filmdenonce/'
+class="social__variant fa fa-instagram"></a>
+</div>
+
+<div class="clearfix"></div>
+<p class="copy">&copy;Filmdən Öncə</p>
+</div>
+</div>
+</section>
+</footer>
+</div>
+
+<!-- open/close -->
+<div class="overlay overlay-hugeinc">
+
+<section class="container">
+
+<div class="col-sm-4 col-sm-offset-4">
+<button type="button" class="overlay-close">Close</button>
+<form id="login-form" class="login" method='get' novalidate=''>
+<p class="login__title">sign in <br><span class="login-edition">welcome to A.Movie</span></p>
+
+<div class="social social--colored">
+<a href='#' class="social__variant fa fa-facebook"></a>
+<a href='#' class="social__variant fa fa-twitter"></a>
+<a href='#' class="social__variant fa fa-tumblr"></a>
+</div>
+
+<p class="login__tracker">or</p>
+
+<div class="field-wrap">
+<input type='email' placeholder='Email' name='user-email' class="login__input">
+<input type='password' placeholder='Password' name='user-password' class="login__input">
+
+<input type='checkbox' id='#informed' class='login__check styled'>
+<label for='#informed' class='login__check-info'>remember me</label>
+</div>
+
+<div class="login__control">
+<button type='submit' class="btn btn-md btn--warning btn--wider">sign in</button>
+<a href="#" class="login__tracker form__tracker">Forgot password?</a>
+</div>
+</form>
+</div>
+
+</section>
+</div>
+
+<!-- JavaScript-->
+<!-- jQuery 1.9.1-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/external/jquery-1.10.1.min.js"><\/script>')</script>
+<!-- Migrate -->
+<script src="{% static 'js\external\jquery-migrate-1.2.1.min.js' %}"></script>
+<!-- Bootstrap 3-->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+<!-- jQuery REVOLUTION Slider -->
+<script type="text/javascript" src="{% static 'rs-plugin\js\jquery.themepunch.plugins.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'rs-plugin\js\jquery.themepunch.revolution.min.js' %}"></script>
+
+<!-- Mobile menu -->
+<script src="{% static 'js/jquery.mobile.menu.js' %}"></script>
+<!-- Select -->
+<script src="{% static 'js/external/jquery.selectbox-0.2.min.js' %}"></script>
+<!-- Stars rate -->
+<script src="{% static 'js/external/jquery.raty.js' %}"></script>
+
+<!-- Form element -->
+<script src="{% static 'js/external/form-element.js' %}"></script>
+<!-- Form validation -->
+<script src="{% static 'js/form.js' %}"></script>
+
+<!-- Twitter feed -->
+<script src="{% static 'js/external/twitterfeed.js' %}"></script>
+
+<!-- Custom -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+init_Home();
+});
+</script>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script src="{% static 'js/back.js' %}"></script>
+</html>

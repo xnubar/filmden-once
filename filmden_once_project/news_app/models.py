@@ -1,8 +1,8 @@
 from django.db import models
-
+from users_app.models import Member
 class News(models.Model):
     title = models.CharField(max_length=150)
-    image = models.ImageField(upload_to='/static/images/')
+    image = models.ImageField(upload_to='static/images/')
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now_add=True)
     text = models.CharField(max_length=1000)

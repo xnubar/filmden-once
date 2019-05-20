@@ -13,7 +13,7 @@ class Film(models.Model):
     box_office = models.CharField(max_length=50)
     member = models.ForeignKey(Member,  on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
-    poster = models.ImageField(upload_to='/static/images/')
+    poster = models.ImageField(upload_to='static/images/')
 
 
 class Actor(models.Model):

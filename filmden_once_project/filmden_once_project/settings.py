@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'films_app',
     'news_app',
-    'comment_app',
-    'users_app'
+    'comments_app',
+    'users_app',
+    'main_app'
 
 ]
 
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'filmden_once_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,8 +81,12 @@ WSGI_APPLICATION = 'filmden_once_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':   'filmden_once_DB',
+        'HOST':    '127.0.0.1',
+        'PORT':    3307,
+        'USER':    'root',
+        'PASSWORD': '123456'
     }
 }
 
@@ -123,3 +128,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [ 'static']
