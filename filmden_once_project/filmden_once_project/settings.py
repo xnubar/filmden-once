@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'films_app',
+    'news_app',
+    'comments_app',
     'users_app',
-    'news_app'
-
+    'main_app'
 ]
 
 MIDDLEWARE = [
@@ -80,12 +81,11 @@ WSGI_APPLICATION = 'filmden_once_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'filmdenonce_db',
-        'HOST':'127.0.0.1',
-        'PORT':3307,
-        'USER':'root',
-        'PASSWORD':'123456'
-
+        'NAME':   'filmden_once_DB',
+        'HOST':    '127.0.0.1',
+        'PORT':    3307,
+        'USER':    'root',
+        'PASSWORD': '123456'
     }
 }
 
