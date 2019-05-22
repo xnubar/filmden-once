@@ -95,14 +95,22 @@
 <a href="/contact/">Contact</a>
 
 </li>
+{% if user.is_authenticated%}
+<li>
+<a href="" class="btn btn--sign sub-nav-toggle plus login-window signin">Log out</a>
+</li>
+
+{% else %}
 <li>
 
     <a href="/home/faiq/filmden-once/filmden_once_project/users_app/templates/login.html" class="btn btn--sign sub-nav-toggle plus login-window signin">Sign in</a>
  </li>
  <li>
-    <a href="#" class="btn btn--signup sub-nav-toggle plus login-window signup">Sign up</a>
+    <a href="/home/faiq/filmden-once/filmden_once_project/users_app/templates/signup.html" class="btn btn--signup sub-nav-toggle plus login-window signup">Sign up</a>
 
 </li>
+{% endif %}
+
 
 </ul>
 </nav>
