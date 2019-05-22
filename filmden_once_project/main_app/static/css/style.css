@@ -2980,9 +2980,19 @@ ul#navigation a:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+.btn--signup {
+  font: 13px 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffd564;
+  position: relative;
+  margin-left: 3px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
 .btn--sign:before {
   content: '';
-  background-image: url(../images/components/wave.svg);
+ /* background-image: url(../images/components/wave.svg); */
   background-repeat: no-repeat;
   background-size: 48px 4px;
   width: 48px;
@@ -2991,13 +3001,25 @@ ul#navigation a:hover {
   top: 24px;
   left: 12px;
 }
+.btn--signup:before {
+  content: '';
+  /* background-image: url(../images/components/wave.svg); */
+  background-repeat: no-repeat;
+  background-size: 48px 4px;
+  width: 48px;
+  height: 4px;
+  position: absolute;
+  top: 24px;
+  left: 12px;
+}
+
 .btn--sign:hover,
 .btn--sign:focus {
   color: #b4b1b2;
 }
 .btn--sign:hover:before,
 .btn--sign:focus:before {
-  background-image: url(../images/components/wave-hover.svg);
+  /* +background-image: url(../images/components/wave-hover.svg); */
 }
 .btn--book {
   padding: 7px 17px;
@@ -9972,4 +9994,8 @@ ul#navigation li.mega-menu__nav-item:hover:before {
   .post--preview .post__image {
     width: 100%;
   }
+}
+
+.signin,signup{
+  color: yellow;
 }
