@@ -14,18 +14,19 @@ def indexpage(request):
 
     return render(request, 'index.html')
 
-def login_view(request):
-    if request.user.is_authenticated:
-        return redirect('index')
+# def login_view(request):
+#     if request.user.is_authenticated:
+#         return redirect('index')
 
-    if request.method == 'POST':
-        username = request.POST.get('username', '')
-        password = request.POST.get('password', '')
-
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('index')
+#     if request.method == 'POST':
+#         print('frfer')
+#         username = request.POST.get('user-email', '')
+#         password = request.POST.get('password', '')
+#         print(f'username: {username}, password: {password}')
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('index')
 
     return render(request, 'login.html')
 
@@ -43,3 +44,4 @@ def contact(request):
 
 def products(request):
     return render(request, 'products.html')
+

@@ -1,9 +1,10 @@
+{% load crispy_forms_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="{% static 'css/signup.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{% static 'css/signup.css' %}" rel="stylesheet">
 </head>
 <body>
  <div class="page-wrapper bg-dark p-t-100 p-b-50">
@@ -13,46 +14,16 @@
                     <h2 class="title">Sign up</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
-                        <div class="form-row">
-                            <div class="name">Full name</div>
-                            <div class="value">
-                                <input class="input--style-6" type="text" name="full_name">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Email address</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="email" name="email" placeholder="example@email.com">
-                                </div>
-                            </div>
-                        </div>
-                         <div class="form-row">
-                            <div class="name">Password</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="password" name="password" >
-                                </div>
-                            </div>
-                        </div>
-                     
-                        <div class="form-row">
-                            <div class="name">Upload Picture</div>
-                            <div class="value">
-                                <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="file_img" id="file">
-                                    <label class="label--file" for="file">Choose file</label>
-                                    <span class="input-file__info">No file chosen</span>
-                                </div>
-                                <div class="label--desc">Upload your file. Max file size 50 MB</div>
-                            </div>
+                     <form method="POST" class="container" enctype="multipart/form-data">
+                        {{registration_form | crispy }}
+                        {% csrf_token %}
+                        <div class="card-footer">
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Sign Up</button>
                         </div>
                     </form>
+
                 </div>
-                <div class="card-footer">
-                    <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Us</button>
-                </div>
+            
             </div>
         </div>
     </div>
@@ -60,7 +31,9 @@
 
 <script src="{% static 'js/signup.js' %}"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
