@@ -33,7 +33,7 @@
 <body>
 
     <div class="container">
-            <form id="login-form" class="login" method='get' novalidate=''>
+            <form id="login-form" class="login" method='POST' novalidate=''>
                     <p class="login__title">sign in <br><span class="login-edition">welcome to A.Movie</span></p>
                     
                     <div class="social social--colored">
@@ -56,6 +56,7 @@
                     <button type='submit' class="btn btn-md btn--warning btn--wider">sign in</button>
                     <a href="/users/forgot/" class="login__tracker form__tracker">Forgot password?</a>
                     </div>
+                    {% csrf_token %}
                     </form>
 
     </div>

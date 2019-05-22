@@ -8,5 +8,12 @@ class Member(User):
     profile_image = models.ImageField(upload_to='images', blank=True, null=True)
     status = models.BooleanField(default=True)
 
+    def save(self, *args, **kwargs):
+        self.set_password(self.password)
+
+        return super().save(*args, **kwargs)
+
+
+
     class Meta:
         verbose_name = 'Member'

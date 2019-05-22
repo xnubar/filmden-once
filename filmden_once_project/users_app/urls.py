@@ -5,8 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('signup/', signup, name = 'signup'),
-    path('login/', login, name = 'login'),
-    path('accounts/', include ('django.contrib.auth.urls')),
+    path('login/', login_view, name = 'login'),
+    path('profile/', profile_view, name = 'profile'),
 ] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
 
