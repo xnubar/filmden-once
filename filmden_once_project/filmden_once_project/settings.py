@@ -131,3 +131,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     'static'
 ]
+
+LOGIN_REDIRECT_URL ='index'
