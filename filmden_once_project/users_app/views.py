@@ -7,21 +7,27 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import login, authenticate, logout
 
 def profile_view(request):
-    return render(request, 'profile.html')
+    user = Member.objects.get(pk=request.user.pk)
+    return render(request, 'profile.html', context = {
+        'user': user
+    })
+
+def dashboard_view(request):
+    user = Member.objects.get(pk=request.user.pk)
+    print(user.profile_image)
+    return render(request, 'dashboard.html',context = {
+        'user': user
+    })
 
 
 def login_view(request):
-  
-
     if request.method == 'POST':
-        print('frfer:  ')
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
-        print(f'username: {username}, password: {password}')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/users/profile/')
+            return redirect('/users/dashboard/')
     # if request.user.is_authenticated:
     #     return redirect('/')
     return render (request,"login.html")
@@ -46,3 +52,4 @@ def signup(request):
     return render(request, 'signup.html', context={
         'registration_form': MemberCreateForm()
     })
+
