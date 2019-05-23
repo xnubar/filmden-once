@@ -47,4 +47,9 @@ def signup(request):
 
 
 def forgot(request):
+    if request.method == 'POST':
+        password1=request.POST.get('password1')
+        password2=request.POST.get('password2')
+        user.password1=user.password2
+        return redirect('/login/')
     return render(request, 'password_change_form.html')
