@@ -33,12 +33,16 @@ def dashboard_view(request):
     })
 
 
+
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
-        user = authenticate(request, username=username, password=password)
+        print('frfer:  ')
+        username = request.POST.get('user_email', '')
+        password = request.POST.get('user_password', '')
         print(f'username: {username}, password: {password}')
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect('/users/dashboard/')
@@ -49,7 +53,6 @@ def login_view(request):
 
 def index(request):
     return render(request, 'signup.html')
-
 
 
 def signup(request):
@@ -67,3 +70,6 @@ def signup(request):
         'registration_form': MemberCreateForm()
     })
 
+
+def forgot(request):
+    return render(request, 'password_change_form.html')
