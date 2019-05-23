@@ -7,14 +7,27 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import login, authenticate, logout
 
 def profile_view(request):
+    if request.method == 'POST':
+        user =Member.objects.get(pk=request.user.pk)
+        password = request.POST.get("password","")
+        if password!="":
+            print(f'password ee: {password}')
+            user.password = password 
+        user.first_name = request.POST.get("first_name","")
+        user.last_name = request.POST.get("last_name","")
+        image_path = request.POST.get("profile_pic","")
+        if image_path and image_path != user.profile_image:
+            Member.objects.get(pk=1).profile_image.delete(save=True)
+            user.profile_image = image_path
+        user.save()
     user = Member.objects.get(pk=request.user.pk)
+    print(user.password)
     return render(request, 'profile.html', context = {
         'user': user
     })
 
 def dashboard_view(request):
     user = Member.objects.get(pk=request.user.pk)
-    print(user.profile_image)
     return render(request, 'dashboard.html',context = {
         'user': user
     })
@@ -25,6 +38,7 @@ def login_view(request):
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
         user = authenticate(request, username=username, password=password)
+        print(f'username: {username}, password: {password}')
         if user is not None:
             login(request, user)
             return redirect('/users/dashboard/')
