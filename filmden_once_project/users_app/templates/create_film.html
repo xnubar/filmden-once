@@ -1,0 +1,181 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+        <meta name="description" content="A Template by Gozha.net">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Gozha.net">
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/fo.png' %}"/>
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/fo.png' %}"/>
+    <!-- Mobile Specific Metas-->
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="telephone=no" name="format-detection">
+    
+    <!-- Fonts -->
+        <!-- Font awesome - icon font -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!-- Roboto -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <!-- Stylesheets --> 
+
+        <!-- Mobile menu -->
+        <link href="{% static '/css/createfilm.css' %}" rel="stylesheet">
+        <link href="{% static '/css/gozha-nav.css' %}" rel="stylesheet">
+        <!-- Select -->
+        <link href="{% static 'css/external/jquery.selectbox.css' %}" rel="stylesheet">
+        <!-- Magnific-popup -->
+        <link href="{% static 'css/external/magnific-popup.css' %}" rel="stylesheet">
+    
+        <!-- Custom -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+        <!-- Modernizr --> 
+        <script src="{% static 'js/external/modernizr.custom.js' %}"></script>
+    
+<title>Create a movie </title>
+</head>
+<body>
+<header class="header-wrapper header-wrapper--home">
+<!-- Logo link-->
+<a href='/users/' class="logo">
+<img alt='logo' src="{% static 'images/fo.png' %}">
+</a>
+
+<!-- Main website navigation-->
+<nav id="navigation-box">
+<!-- Toggle for mobile menu mode -->
+<a href="#" id="navigation-toggle">
+<span class="menu-icon">
+<span class="icon-toggle" role="button" aria-label="Toggle Navigation">
+<span class="lines"></span>
+</span>
+</span>
+</a>
+
+<!-- Link navigation -->
+<ul id="navigation">
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="./movie-page-left.html">Films and TV Series</a>
+<ul>
+<li class="menu__nav-item"><a href="/films/">Films</a></li>
+<li class="menu__nav-item"><a href="/films/tvseries/">TV Series</a></li>
+
+</ul>
+</li>
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="/products/">Products</a>
+
+</li>
+
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="/about/">About</a>
+
+</li>
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="/news/">News</a>
+
+</li>
+<li>
+<span class="sub-nav-toggle plus"></span>
+<a href="/contact/">Contact</a>
+
+</li>
+
+<li><a href="/users/login/" class="btn btn--sign">Sign in</a></li>
+
+
+ <li>
+    <a href="/users/signup/" class="btn btn--signup">Sign up</a>
+
+</li>
+
+
+
+</ul>
+</nav>
+
+<!-- Additional header buttons / Auth and direct link to booking-->
+<div class="control-panel">
+<div class="auth auth--home">
+<div class="auth__show">
+<span class="auth__image">
+<!-- <img alt="" src="{% static 'images/client-photo/auth.png' %}"> -->
+</span>
+</div>
+
+<!-- <ul class="auth__function">
+<li><a href="#" class="auth__function-item">Watchlist</a></li>
+<li><a href="#" class="auth__function-item">Booked tickets</a></li>
+<li><a href="#" class="auth__function-item">Discussion</a></li>
+<li><a href="#" class="auth__function-item">Settings</a></li>
+</ul> -->
+
+</div>
+</div>
+<div class="container">
+    <div id="form">
+        <form >
+            {{form | crispy }}
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+
+</div>
+</header>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/external/jquery-1.10.1.min.js"><\/script>')</script>
+<!-- Migrate -->
+<script src="{% static 'js\external\jquery-migrate-1.2.1.min.js' %}"></script>
+<!-- Bootstrap 3-->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+<!-- jQuery REVOLUTION Slider -->
+<script type="text/javascript" src="{% static 'rs-plugin\js\jquery.themepunch.plugins.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'rs-plugin\js\jquery.themepunch.revolution.min.js' %}"></script>
+
+<!-- Mobile menu -->
+<script src="{% static 'js/jquery.mobile.menu.js' %}"></script>
+<!-- Select -->
+<script src="{% static 'js/external/jquery.selectbox-0.2.min.js' %}"></script>
+<!-- Stars rate -->
+<script src="{% static 'js/external/jquery.raty.js' %}"></script>
+
+<!-- Form element -->
+<script src="{% static 'js/external/form-element.js' %}"></script>
+<!-- Form validation -->
+<script src="{% static 'js/form.js' %}"></script>
+
+<!-- Twitter feed -->
+<script src="{% static 'js/external/twitterfeed.js' %}"></script>
+
+<!-- Custom -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+init_Home();
+});
+</script>
+
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script src="{% static 'js/back.js' %}"></script>
+</head>

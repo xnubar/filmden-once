@@ -5,30 +5,7 @@ from django.urls import reverse_lazy
 
 def logout_view(request):
     logout(request)
-    return redirect('index.html')
-
-@login_required(login_url=reverse_lazy('login'))
-def indexpage(request):
-
-    # logout(request)
-
-    return render(request, 'index.html')
-
-# def login_view(request):
-#     if request.user.is_authenticated:
-#         return redirect('index')
-
-#     if request.method == 'POST':
-#         print('frfer')
-#         username = request.POST.get('user-email', '')
-#         password = request.POST.get('password', '')
-#         print(f'username: {username}, password: {password}')
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect('index')
-
-    return render(request, 'login.html')
+    return redirect('/')
 
 def index(request):
     return render(request, 'index.html')

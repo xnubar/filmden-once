@@ -5,14 +5,25 @@ from .forms import MemberCreateForm
 from django.urls import reverse_lazy
 from django.shortcuts import render,redirect
 from django.contrib.auth import login, authenticate, logout
+from .models import Film
 
+def profile_view(request):
+    user = Member.objects.get(pk=request.user.pk)
+    return render(request, 'profile.html', context = {
+        'user': user
+    })
 
+def dashboard_view(request):
+    user = Member.objects.get(pk=request.user.pk)
+    print(user.profile_image)
+    return render(request, 'dashboard.html',context = {
+        'user': user
+    })
 
 
 def login_view(request):
-  
-
     if request.method == 'POST':
+
         print('frfer:  ')
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
@@ -21,6 +32,14 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return redirect('/')
+
+        username = request.POST.get('user_email', '')
+        password = request.POST.get('user_password', '')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/users/dashboard/')
+
     # if request.user.is_authenticated:
     #     return redirect('/')
     return render (request,"login.html")
@@ -57,6 +76,14 @@ def reset(request):
 def forgot(request):
      return render(request, 'forgot.html')
 
+def create_film(request):
+    return render(request,'create_film.html')
 
 def my_scheduled_job():
     pass
+
+class Film(CreateView):
+    model = Film
+    template_name = 'create_film.html';
+    fields = '__all__'
+
