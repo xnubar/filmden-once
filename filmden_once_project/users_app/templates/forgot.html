@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forgot Password</title>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Roboto -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+    <!-- Open Sans -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
+    
+    <!-- Stylesheets -->
+    
+    <!-- Mobile menu -->
+    <link href="{% static 'css/gozha-nav.css' %}" rel="stylesheet">
+    <!-- Select -->
+    <link href="{% static 'css/external/jquery.selectbox.css' %}" rel="stylesheet">
+    
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/settings.css' %}" media="screen">
+    
+    <!-- Custom -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    
+    <!-- Modernizr -->
+    <script src="{% static 'js/external/modernizr.custom.js' %}"></script>
+    
+</head>
+<body>
+
+    <div class="container">
+            <form id="login-form" class="login" method='get' novalidate=''>
+                   
+                    <div class="field-wrap">
+                    <p>Please enter your email to search for your account.</p>
+                    <input type='email' placeholder='Email' name='user_email' class="login__input">
+                    <input value="Axtar" type="submit" name="did_submit" id="u_0_2">                 
+                    </div>
+                </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+</body>
+</html>
