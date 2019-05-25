@@ -183,9 +183,9 @@
                             <img src="{% static 'images/admin-avatar.png' %}" />
                             <span></span>{{user.username}}<i class="fa fa-angle-down m-l-5"></i></a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="profile.html"><i class="fa fa-user"></i>Profile</a>
+                            <a class="dropdown-item" href="/users/profile/"><i class="fa fa-user"></i>Profile</a>
                             <li class="dropdown-divider"></li>
-                            <a class="dropdown-item" href="login.html"><i class="fa fa-power-off"></i>Logout</a>
+                            <a class="dropdown-item" href="/logout/"><i class="fa fa-power-off"></i>Logout</a>
                         </ul>
                     </li>
                 </ul>
@@ -219,12 +219,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="icons.html"><i class="sidebar-item-icon fa fa-list-ol"></i>
+                        <a href="/films/"><i class="sidebar-item-icon fa fa-list-ol"></i>
                             <span class="nav-label">My films</span>
                         </a>
                     </li>
                     <li>
-                        <a href="icons.html"><i class="sidebar-item-icon fa fa-list-ul"></i>
+                        <a href="/films/watchlist/"><i class="sidebar-item-icon fa fa-list-ul"></i>
                             <span class="nav-label">Watchlist</span>
                         </a>
                     </li>
@@ -247,7 +247,7 @@
 
                 <div class="container">
 
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         {{form|crispy}}
                         {% csrf_token %}
 
