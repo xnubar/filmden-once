@@ -8,14 +8,27 @@ from django.contrib.auth import login, authenticate, logout
 from .models import Film
 
 def profile_view(request):
+    if request.method == 'POST':
+        user =Member.objects.get(pk=request.user.pk)
+        password = request.POST.get("password","")
+        if password!="":
+            print(f'password ee: {password}')
+            user.password = password 
+        user.first_name = request.POST.get("first_name","")
+        user.last_name = request.POST.get("last_name","")
+        image_path = request.POST.get("profile_pic","")
+        if image_path and image_path != user.profile_image:
+            Member.objects.get(pk=1).profile_image.delete(save=True)
+            user.profile_image = image_path
+        user.save()
     user = Member.objects.get(pk=request.user.pk)
+    print(user.password)
     return render(request, 'profile.html', context = {
         'user': user
     })
 
 def dashboard_view(request):
     user = Member.objects.get(pk=request.user.pk)
-    print(user.profile_image)
     return render(request, 'dashboard.html',context = {
         'user': user
     })
@@ -33,13 +46,19 @@ def login_view(request):
             login(request, user)
             return redirect('/')
 
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('user_email', '')
+        password = request.POST.get('user_password', '')
+        print('frfer:  ')
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect('/users/dashboard/')
-
     # if request.user.is_authenticated:
     #     return redirect('/')
     return render (request,"login.html")
