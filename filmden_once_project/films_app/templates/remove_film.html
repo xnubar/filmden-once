@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input type="submit" value="Confirm">
+    <div class="form-group">
+    <button value="Confirm" class="form-control btn btn-danger">Confirm</button>
+    <a href="{%'create_film'%}" class="btn btn-primary">Cancel</a>
+</form>
+</body>
+</html>

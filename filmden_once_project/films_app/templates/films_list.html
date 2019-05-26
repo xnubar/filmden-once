@@ -219,12 +219,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="icons.html"><i class="sidebar-item-icon fa fa-list-ol"></i>
+                        <a href="/films/"><i class="sidebar-item-icon fa fa-list-ol"></i>
                             <span class="nav-label">My films</span>
                         </a>
                     </li>
                     <li>
-                        <a href="icons.html"><i class="sidebar-item-icon fa fa-list-ul"></i>
+                        <a href="/films/watchlist/"><i class="sidebar-item-icon fa fa-list-ul"></i>
                             <span class="nav-label">Watchlist</span>
                         </a>
                     </li>
@@ -257,7 +257,9 @@
                                             <img class="img-responsive" src="/users{{film.poster.url}}" alt="">
                                             <div class="deal-badge">{{film.year}}</div>
                                         </div>
-
+                                     <div>
+                                         <td ><a href="{% 'remove_film' %}"><i class="fas fa-times"></i></a></td>
+                                     </div>
                                         <div class="deal-content">
                                             <p>{{film.title}}</p>
                                             <div class="deal-content-bottom">

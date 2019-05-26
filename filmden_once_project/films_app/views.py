@@ -1,11 +1,14 @@
-from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.shortcuts import render,redirect
+from django.views.generic.edit import CreateView,DeleteView
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Film
 from django.urls import reverse_lazy
 from users_app.models import Member
 from films_app.models import Member_watchlist
+from django.core.exceptions import ValidationError
+from django.http import JsonResponse, HttpResponse
+
 
 def films_list(request):
     print(request.user)
@@ -25,6 +28,19 @@ class CreateFilm(LoginRequiredMixin, CreateView):
         form.instance.member = Member.objects.get(pk=self.request.user.pk)
         return super(LoginRequiredMixin, self).form_valid(form)
 
+class RemoveFilm(LoginRequiredMixin, DeleteView):
+    model = Film
+    login_url = reverse_lazy('login')
+    template_name = 'remove_film.html'
+    success_url=reverse_lazy('films_list')
+
+    # fields = ('title','description')
+
+    # fields = ('title', 'duration', 'genre', 'director', 'year', 'country', 'box_office', "poster", "review", )
+
+    # def form_valid(self, form):
+        # form.instance.member = Member.objects.get(pk=self.request.user.pk)
+        # return super(LoginRequiredMixin, self).form_valid(form)
 
 class FilmList(ListView):
     model = Film
