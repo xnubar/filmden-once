@@ -43,7 +43,12 @@ INSTALLED_APPS = [
     'news_app',
     'comments_app',
     'users_app',
-    'main_app'
+    'main_app',
+    'django_crontab'
+
+]
+CRONJOBS = [
+    ('*/5 * * * *', 'myapp.cron.my_scheduled_job')
 ]
 
 MIDDLEWARE = [

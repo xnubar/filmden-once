@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Forgot Password</title>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <!-- Roboto -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
@@ -32,33 +32,14 @@
 <body>
 
     <div class="container">
-            <form id="login-form" class="login" method='POST' novalidate=''>
-                    <p class="login__title">sign in <br><span class="login-edition">welcome to A.Movie</span></p>
-                    
-                    <div class="social social--colored">
-                    <a href='#' class="social__variant fa fa-facebook"></a>
-                    <a href='#' class="social__variant fa fa-twitter"></a>
-                    <a href='#' class="social__variant fa fa-tumblr"></a>
-                    </div>
-                    
-                    <p class="login__tracker">or</p>
-                    
+            <form id="login-form" class="login" method='get' novalidate=''>
+                   
                     <div class="field-wrap">
+                    <p>Please enter your email to search for your account.</p>
                     <input type='email' placeholder='Email' name='user_email' class="login__input">
-                    <input type='password' placeholder='Password' name='user_password' class="login__input">
-                    
-                    <input type='checkbox' id='#informed' class='login__check styled'>
-                    <label for='#informed' class='login__check-info'>remember me</label>
+                    <input value="Axtar" type="submit" name="did_submit" id="u_0_2">                 
                     </div>
-                    
-                    <div class="login__control">
-                    <button type='submit' class="btn btn-md btn--warning btn--wider">sign in</button>
-                    <a href="/users/password_change_form/" class="login__tracker form__tracker">Forgot password?</a>
-                    <a href="/users/forgot/" class="login__tracker form__tracker">Send password to email</a>
-
-                    </div>
-                    {% csrf_token %}
-                    </form>
+                </form>
 
     </div>
 

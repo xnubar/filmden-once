@@ -8,14 +8,15 @@ class Film(models.Model):
     genre = models.CharField(max_length=255)
     director = models.CharField(max_length=250)
     review = models.CharField(max_length=800)
-    year = models.IntegerField()
+    year = models.IntegerField(null=True)
     country = models.CharField(max_length=250)
     box_office = models.CharField(max_length=50)
     member = models.ForeignKey(Member,  on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
-    poster = models.ImageField(upload_to='static/images/')
-
-
+    poster = models.ImageField(upload_to='images/')
+    description=models.CharField(max_length=1500)
+    def __str__(self):
+        return self.title
 class Actor(models.Model):
     fullname = models.CharField(max_length=250)
     status = models.BooleanField(default=True)

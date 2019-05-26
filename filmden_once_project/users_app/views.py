@@ -5,6 +5,7 @@ from .forms import MemberCreateForm
 from django.urls import reverse_lazy
 from django.shortcuts import render,redirect
 from django.contrib.auth import login, authenticate, logout
+from .models import Film
 
 def profile_view(request):
     if request.method == 'POST':
@@ -33,6 +34,19 @@ def dashboard_view(request):
     })
 
 
+def login_view(request):
+    if request.method == 'POST':
+
+        print('frfer:  ')
+        username = request.POST.get('user_email', '')
+        password = request.POST.get('user_password', '')
+        print(f'username: {username}, password: {password}')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -41,7 +55,6 @@ def login_view(request):
         print('frfer:  ')
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
-        print(f'username: {username}, password: {password}')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
@@ -71,11 +84,25 @@ def signup(request):
     })
 
 
-def forgot(request):
+def reset(request):
     if request.method == 'POST':
         password1=request.POST.get('password1')
         password2=request.POST.get('password2')
         user.password1=user.password2
         return redirect('/login/')
     return render(request, 'password_change_form.html')
+
+def forgot(request):
+     return render(request, 'forgot.html')
+
+def create_film(request):
+    return render(request,'create_film.html')
+
+def my_scheduled_job():
+    pass
+
+class Film(CreateView):
+    model = Film
+    template_name = 'create_film.html';
+    fields = '__all__'
 
