@@ -257,9 +257,7 @@
                                             <img class="img-responsive" src="/users{{film.poster.url}}" alt="">
                                             <div class="deal-badge">{{film.year}}</div>
                                         </div>
-                                     <div>
-                                         <td ><a href="{% 'remove_film' %}"><i class="fas fa-times"></i></a></td>
-                                     </div>
+
                                         <div class="deal-content">
                                             <p>{{film.title}}</p>
                                             <div class="deal-content-bottom">
@@ -268,6 +266,11 @@
                                                 </p>
                                                 <a type="button" class="btn btn-sm">Get it</a>
                                             </div>
+                                        </div>
+                                        <div>
+                                            <table>
+                                                <td><a href="/films/remove/{{film.pk}}"><i class="fas fa-times"> Delete</i></a></td>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
