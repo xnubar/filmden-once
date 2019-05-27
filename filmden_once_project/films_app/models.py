@@ -14,17 +14,19 @@ class Film(models.Model):
     member = models.ForeignKey(Member,  on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
     poster = models.ImageField(upload_to='images/')
-    description=models.CharField(max_length=1500)
+    actors = models.ManyToManyField("films_app.Actor")
+    
     def __str__(self):
         return self.title
+
+
 class Actor(models.Model):
     fullname = models.CharField(max_length=250)
     status = models.BooleanField(default=True)
 
+
+
 class Member_watchlist(models.Model):
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    status = models.BooleanField(default=True)
-
-class Film_Actors(models.Model):
-    actor = models.ForeignKey(Actor, on_delete=models.CASCADE)
     film = models.ForeignKey(Film, on_delete=models.CASCADE)
+    status = models.BooleanField(default=True)

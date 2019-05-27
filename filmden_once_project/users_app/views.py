@@ -6,6 +6,13 @@ from django.urls import reverse_lazy
 from django.shortcuts import render,redirect
 from django.contrib.auth import login, authenticate, logout
 from .models import Film
+from users_app.models import Member
+from django.template import loader
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib import messages
+import string
+import random
 
 def profile_view(request):
     if request.method == 'POST':
@@ -34,25 +41,11 @@ def dashboard_view(request):
     })
 
 
-def login_view(request):
-    if request.method == 'POST':
-
-        print('frfer:  ')
-        username = request.POST.get('user_email', '')
-        password = request.POST.get('user_password', '')
-        print(f'username: {username}, password: {password}')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/')
-
-
 
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
-        print('frfer:  ')
         username = request.POST.get('user_email', '')
         password = request.POST.get('user_password', '')
         user = authenticate(request, username=username, password=password)
@@ -64,12 +57,8 @@ def login_view(request):
     return render (request,"login.html")
     
 
-def index(request):
-    return render(request, 'signup.html')
-
 
 def signup(request):
-    print('rfr')
     if request.method == 'POST':
         form = MemberCreateForm(request.POST, files=request.FILES)
         if form.is_valid():
@@ -92,17 +81,50 @@ def reset(request):
         return redirect('/login/')
     return render(request, 'password_change_form.html')
 
+
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+confirmation_code=None
 def forgot(request):
-     return render(request, 'forgot.html')
+    if request.method == 'POST':
+        try:
+            member = Member.objects.get(member_email=request.POST.get('user_email',''))
+            if member:
+                global confirmation_code
+                subject= "Filmden once forgot password"
+                confirmation_code = id_generator()
+                message = "Your confirmation code is: " +confirmation_code
+                from_email=settings.EMAIL_HOST_USER
+                send_mail(subject,
+                          message, from_email, [request.POST.get('confirm_code','')], fail_silently=False)
+                return redirect('/users/confirm/')
+        except Exception as err:
+            return redirect('/users/login')
+    return render(request, 'forgot.html')
 
 def create_film(request):
     return render(request,'create_film.html')
 
-def my_scheduled_job():
-    pass
+def confirm_code(request):
+    if request.method == 'POST':
+        code = request.POST.get('confirm_code','')
+        if code==confirmation_code:
+            return redirect('/users/reset/')
+    return render(request, 'code_confirmation.html')
+
+def reset(request):
+    if request.method=='POST':
+        password=request.POST.get('password','')
+        re_password=request.POST.get('re_password','')
+        if password==re_password:
+            user =Member.objects.get(pk=request.user.pk)
+            user.password = password
+            user.save()
+            return redirect('/users/login/')
+    return render(request, "new_password.html")
 
 class Film(CreateView):
     model = Film
-    template_name = 'create_film.html';
+    template_name = 'create_film.html'
     fields = '__all__'
 

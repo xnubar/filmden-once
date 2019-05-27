@@ -8,20 +8,13 @@ from users_app.models import Member
 from films_app.models import Member_watchlist
 from django.core.exceptions import ValidationError
 from django.http import JsonResponse, HttpResponse
-
-
-def films_list(request):
-    print(request.user)
-    return render(request, "films_list.html")
+import json
 
 
 class CreateFilm(LoginRequiredMixin, CreateView):
     model = Film
     login_url = reverse_lazy('login')
     template_name = 'create_film.html'
-
-    # fields = ('title','description')
-
     fields = ('title', 'duration', 'genre', 'director', 'year', 'country', 'box_office', "poster", "review", )
 
     def form_valid(self, form):
@@ -34,14 +27,7 @@ class RemoveFilm(LoginRequiredMixin, DeleteView):
     template_name = 'remove_film.html'
     success_url=reverse_lazy('films_list')
 
-    # fields = ('title','description')
-
-    # fields = ('title', 'duration', 'genre', 'director', 'year', 'country', 'box_office', "poster", "review", )
-
-    # def form_valid(self, form):
-        # form.instance.member = Member.objects.get(pk=self.request.user.pk)
-        # return super(LoginRequiredMixin, self).form_valid(form)
-
+ 
 class FilmList(ListView):
     model = Film
     login_url = reverse_lazy('login')
@@ -60,12 +46,9 @@ class WatchList(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        qs = qs.filter(member=self.request.user).order_by('title')
+        qs = qs.filter(member=self.request.user).order_by('film__title')
+
         return qs
 
 
 
-
-def watch_list(request):
-    print(request.user)
-    return render(request, "films_list.html")

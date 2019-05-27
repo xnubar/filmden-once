@@ -15,8 +15,8 @@ urlpatterns = [
     path('create_film', Film.as_view(),name='create_film'),
     path('dashboard/', dashboard_view, name = 'dashboard'),
     path('profile/', profile_view, name = 'profile'),
-    path('forgot/', forgot, name=''), path('forgot/', forgot, name=''),
-    path('password-reset/',auth_views.PasswordResetView.as_view(template_name='password_reset.html'),name='password_reset'),
-    path('password-reset/done/',auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'),name='password_reset_done'),
+    path('forgot/', forgot, name=''),
+    path('confirm/', confirm_code, name='confirm_code'), 
+    path('reset/', reset, name='reset_password'), 
 ] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 

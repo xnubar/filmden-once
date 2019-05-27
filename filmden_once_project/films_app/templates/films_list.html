@@ -183,7 +183,7 @@
                             <img src="{% static 'images/admin-avatar.png' %}" />
                             <span></span>{{user.username}}<i class="fa fa-angle-down m-l-5"></i></a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="profile.html"><i class="fa fa-user"></i>Profile</a>
+                            <a class="dropdown-item" href="/users/profile/"><i class="fa fa-user"></i>Profile</a>
                             <li class="dropdown-divider"></li>
                             <a class="dropdown-item" href="/logout/"><i class="fa fa-power-off"></i>Logout</a>
                         </ul>
@@ -206,7 +206,7 @@
                 </div>
                 <ul class="side-menu metismenu">
                     <li>
-                        <a class="active" href="/users/index/"><i class="sidebar-item-icon fa fa-th-large"></i>
+                        <a class="active" href="/users/dashboard/"><i class="sidebar-item-icon fa fa-th-large"></i>
                             <span class="nav-label">Dashboard</span>
                         </a>
                     </li>
@@ -250,7 +250,7 @@
                                 <div class="ibox-title">My Films</div>
                             </div>
                             <div class="ibox-body">
-                                {% for film in object_list%}
+                                {% for film in object_list %}
                                 <div class="owl-item product-container">
                                     <div class="item deal-item">
                                         <div class="deal-thumb">
