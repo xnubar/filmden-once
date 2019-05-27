@@ -254,7 +254,11 @@
                                 <div class="owl-item product-container">
                                     <div class="item deal-item">
                                         <div class="deal-thumb">
-                                            <img class="img-responsive" src="/users{{film.poster.url}}" alt="">
+                                            {% if not film.poster is defined %}
+                                                <img class="img-responsive" src="/users{{film.poster.url}}" alt="">
+                                            {% else %}
+                                                <img class="img-responsive" src="{% static 'images/film.jpeg' %}" alt="">
+                                            {% endif %}
                                             <div class="deal-badge">{{film.year}}</div>
                                         </div>
 
