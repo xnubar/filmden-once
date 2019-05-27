@@ -7,8 +7,7 @@ urlpatterns = [
     path('about/', about, name = 'about'),
     path('signup/', about, name = 'signup'),
     path('logout/', logout_view, name='index'),
-  
-    
+    path('products/',products ,name ='product'),
     # path('login/', login_view, name='login'),
     #<a href="{% url 'password_change'%}" class="login__tracker form__tracker">Forgot password?</a>
 
